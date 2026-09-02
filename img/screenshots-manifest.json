@@ -1,0 +1,161 @@
+{
+  "application": "seedarr",
+  "base_url": "http://localhost:9898",
+  "captured_at": "2026-09-02T18:13:14Z",
+  "total_screens": 9,
+  "screens": [
+    {
+      "index": 1,
+      "label": "Dashboard",
+      "slug": "dashboard",
+      "url": "http://localhost:9898/",
+      "file": "screen-1.png",
+      "slide_file": "slides/screen-1.png",
+      "named_file": "named/01_dashboard.png",
+      "dimensions": {
+        "width": 3840,
+        "height": 2160
+      },
+      "slide_dimensions": {
+        "width": 800,
+        "height": 450
+      }
+    },
+    {
+      "index": 2,
+      "label": "Torrents",
+      "slug": "torrents",
+      "url": "http://localhost:9898/torrents",
+      "file": "screen-2.png",
+      "slide_file": "slides/screen-2.png",
+      "named_file": "named/02_torrents.png",
+      "dimensions": {
+        "width": 3840,
+        "height": 2160
+      },
+      "slide_dimensions": {
+        "width": 800,
+        "height": 450
+      }
+    },
+    {
+      "index": 3,
+      "label": "Activity",
+      "slug": "activity",
+      "url": "http://localhost:9898/activity/torrents",
+      "file": "screen-3.png",
+      "slide_file": "slides/screen-3.png",
+      "named_file": "named/03_activity.png",
+      "dimensions": {
+        "width": 3840,
+        "height": 2160
+      },
+      "slide_dimensions": {
+        "width": 800,
+        "height": 450
+      }
+    },
+    {
+      "index": 4,
+      "label": "Tracker",
+      "slug": "tracker",
+      "url": "http://localhost:9898/tracker",
+      "file": "screen-4.png",
+      "slide_file": "slides/screen-4.png",
+      "named_file": "named/04_tracker.png",
+      "dimensions": {
+        "width": 3840,
+        "height": 2160
+      },
+      "slide_dimensions": {
+        "width": 800,
+        "height": 450
+      }
+    },
+    {
+      "index": 5,
+      "label": "Peer Map",
+      "slug": "peer-map",
+      "url": "http://localhost:9898/peermap",
+      "file": "screen-5.png",
+      "slide_file": "slides/screen-5.png",
+      "named_file": "named/05_peer-map.png",
+      "dimensions": {
+        "width": 3840,
+        "height": 2160
+      },
+      "slide_dimensions": {
+        "width": 800,
+        "height": 450
+      }
+    },
+    {
+      "index": 6,
+      "label": "Schedule",
+      "slug": "schedule",
+      "url": "http://localhost:9898/schedule",
+      "file": "screen-6.png",
+      "slide_file": "slides/screen-6.png",
+      "named_file": "named/06_schedule.png",
+      "dimensions": {
+        "width": 3840,
+        "height": 2160
+      },
+      "slide_dimensions": {
+        "width": 800,
+        "height": 450
+      }
+    },
+    {
+      "index": 7,
+      "label": "Statistics",
+      "slug": "statistics",
+      "url": "http://localhost:9898/statistics",
+      "file": "screen-7.png",
+      "slide_file": "slides/screen-7.png",
+      "named_file": "named/07_statistics.png",
+      "dimensions": {
+        "width": 3840,
+        "height": 2160
+      },
+      "slide_dimensions": {
+        "width": 800,
+        "height": 450
+      }
+    },
+    {
+      "index": 8,
+      "label": "Settings",
+      "slug": "settings",
+      "url": "http://localhost:9898/settings/general",
+      "file": "screen-8.png",
+      "slide_file": "slides/screen-8.png",
+      "named_file": "named/08_settings.png",
+      "dimensions": {
+        "width": 3840,
+        "height": 2160
+      },
+      "slide_dimensions": {
+        "width": 800,
+        "height": 450
+      }
+    },
+    {
+      "index": 9,
+      "label": "System",
+      "slug": "system",
+      "url": "http://localhost:9898/system/status",
+      "file": "screen-9.png",
+      "slide_file": "slides/screen-9.png",
+      "named_file": "named/09_system.png",
+      "dimensions": {
+        "width": 3840,
+        "height": 2160
+      },
+      "slide_dimensions": {
+        "width": 800,
+        "height": 450
+      }
+    }
+  ]
+}
