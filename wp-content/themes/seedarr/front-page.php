@@ -394,8 +394,9 @@ get_header();
     <div class="tab-content">
 
       <div class="tab-pane active" id="tab-docker">
-        <h4>Docker (Recommended)</h4>
-        <p>The easiest way to run Seedarr. The official image is published to Docker Hub and GHCR.</p>
+        <h4>Container Run (Podman / Docker)</h4>
+        <p>The easiest way to run Seedarr. The official image is published to Docker Hub and GitHub Container Registry (GHCR).</p>
+        <p><strong style="color:var(--text-secondary)">Option 1: Docker Hub</strong></p>
         <pre><code class="language-bash">docker run -d \
   --name seedarr \
   -p 9898:9898 \
@@ -403,11 +404,22 @@ get_header();
   -v seedarr-data:/data \
   --restart unless-stopped \
   feeditout/seedarr:latest</code></pre>
+        <p><strong style="color:var(--text-secondary)">Option 2: GitHub Container Registry (GHCR)</strong></p>
+        <pre><code class="language-bash">docker run -d \
+  --name seedarr \
+  -p 9898:9898 \
+  -v seedarr-config:/config \
+  -v seedarr-data:/data \
+  --restart unless-stopped \
+  ghcr.io/dmzoneill/seedarr:latest</code></pre>
         <p>Then open <strong style="color:var(--text-primary)">http://localhost:9898</strong></p>
         <h4>Docker Compose / Podman Compose</h4>
         <pre><code class="language-yaml">services:
   seedarr:
+    # Option 1 (Docker Hub):
     image: feeditout/seedarr:latest
+    # Option 2 (GHCR):
+    # image: ghcr.io/dmzoneill/seedarr:latest
     container_name: seedarr
     ports:
       - "9898:9898"
@@ -430,7 +442,6 @@ volumes:
         <pre><code class="language-bash">docker compose up -d
 # or
 podman-compose up -d</code></pre>
-        <p>GHCR alternative: <code>ghcr.io/dmzoneill/seedarr:latest</code></p>
         <div class="download-note">
           <strong style="color:var(--text-secondary)">Volumes:</strong> <code>/config</code> stores the database, settings, and logs. <code>/data</code> holds torrent files and the watch folder.
         </div>
@@ -489,7 +500,7 @@ podman-compose up -d</code></pre>
         <h4>Synology</h4>
         <ol>
           <li>Install Container Manager from the Package Center.</li>
-          <li>Pull <code>feeditout/seedarr:latest</code> from Docker Hub.</li>
+          <li>Pull <code>feeditout/seedarr:latest</code> from Docker Hub, or <code>ghcr.io/dmzoneill/seedarr:latest</code> from GHCR.</li>
           <li>Configure port <code>9898</code> and map volumes for <code>/config</code> and <code>/data</code>.</li>
           <li>Browse to <strong style="color:var(--text-primary)">http://&lt;NAS-IP&gt;:9898</strong></li>
         </ol>

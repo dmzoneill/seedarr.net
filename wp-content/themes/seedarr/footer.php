@@ -24,6 +24,7 @@
         <div class="footer-links">
           <a href="https://github.com/dmzoneill/Seedarr" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           <a href="https://hub.docker.com/r/feeditout/seedarr" target="_blank" rel="noopener"><i class="fab fa-docker"></i> Docker Hub</a>
+          <a href="https://ghcr.io/dmzoneill/seedarr" target="_blank" rel="noopener"><i class="fas fa-box"></i> GHCR</a>
           <a href="https://wiki.servarr.com/" target="_blank" rel="noopener"><i class="fas fa-book"></i> Wiki</a>
           <a href="https://github.com/dmzoneill/Seedarr/issues" target="_blank" rel="noopener"><i class="fas fa-bug"></i> Issues</a>
         </div>
