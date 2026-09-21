@@ -10,7 +10,14 @@
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/favicon.svg">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTFS19RQ76"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KTFS19RQ76', { send_page_view: true });
+  </script>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> data-spy="scroll" data-target=".header-navbar" data-offset="70">

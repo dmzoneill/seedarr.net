@@ -61,6 +61,45 @@ fetch('https://api.github.com/repos/dmzoneill/Seedarr/releases/latest')
     var el = document.getElementById('latest-version');
     if (el) el.textContent = 'v1.0.23';
   });
+
+// Google Analytics - Custom Engagement & Outbound Tracking
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof gtag !== 'function') return;
+
+  // Outbound link tracking
+  document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+    if (!link.href.includes(window.location.hostname)) {
+      link.addEventListener('click', function() {
+        gtag('event', 'outbound_click', {
+          link_url: link.href,
+          link_text: (link.innerText || link.textContent || '').trim().slice(0, 100)
+        });
+      });
+    }
+  });
+
+  // Code snippet copy tracking
+  document.addEventListener('copy', function() {
+    var selection = window.getSelection().toString();
+    if (selection && selection.length > 5) {
+      var snippetType = selection.includes('docker') ? 'docker' : selection.includes('podman') ? 'podman' : selection.includes('git') ? 'git' : 'other';
+      gtag('event', 'code_copy', {
+        snippet_type: snippetType,
+        snippet_preview: selection.trim().slice(0, 80)
+      });
+    }
+  });
+
+  // Download section tab / button clicks
+  document.querySelectorAll('#download a, .btn-primary, .btn-secondary, .btn-action').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      gtag('event', 'cta_click', {
+        cta_text: (btn.innerText || btn.textContent || '').trim().slice(0, 50),
+        cta_href: btn.getAttribute('href') || ''
+      });
+    });
+  });
+});
 </script>
 
 <?php wp_footer(); ?>
