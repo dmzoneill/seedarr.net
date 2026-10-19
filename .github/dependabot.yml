@@ -1,0 +1,38 @@
+---
+# Managed by https://github.com/dmzoneill/dmzoneill setup.sh.
+# Entries follow manifests detected in this repository.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+  - package-ecosystem: "npm"
+    directory: "/wp-content/themes/twentytwentyfive"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+    groups:
+      npm:
+        patterns:
+          - "*"
+  - package-ecosystem: "composer"
+    directory: "/wp-includes/sodium_compat"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+    groups:
+      composer:
+        patterns:
+          - "*"
