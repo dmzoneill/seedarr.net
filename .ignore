@@ -25,3 +25,6 @@
 /wp-content/themes/seedarr/assets/js/bootstrap.min.js
 /wp-content/themes/seedarr/assets/js/highlight.min.js
 /wp-content/themes/seedarr/assets/js/jquery.min.js
+
+# SVG image assets. jscpd treats the mirrored artwork as markup clones.
+**/*.svg
