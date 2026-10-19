@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Landing Page
  * Front Page template
@@ -6,15 +7,19 @@
  * @package Seedarr
  */
 
+require_once __DIR__ . '/inc/asset-uri.php';
+require_once __DIR__ . '/inc/docker-run.php';
+
 get_header();
 ?>
 
 <section id="hero">
   <div class="container text-center">
 
-    <img class="hero-logo" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/seedarr-skull.svg" alt="Seedarr">
-    <img class="hero-wordmark" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/seedarr-text.svg" alt="Seedarr">
-    <p class="hero-tagline">The <em>*arr</em> approach to BitTorrent seeding &mdash; maintain your ratio, automatically.</p>
+    <img class="hero-logo" src="<?php echo seedarr_asset_uri('/assets/img/seedarr-skull.svg'); ?>" alt="Seedarr">
+    <img class="hero-wordmark" src="<?php echo seedarr_asset_uri('/assets/img/seedarr-text.svg'); ?>" alt="Seedarr">
+    <p class="hero-tagline">The <em>*arr</em> approach to BitTorrent seeding &mdash; maintain your ratio,
+      automatically.</p>
 
     <div class="hero-pills">
       <span class="hero-pill"><i class="fas fa-tachometer-alt"></i> Real-time Dashboard</span>
@@ -26,13 +31,14 @@ get_header();
 
     <div class="hero-cta">
       <a href="#download" class="btn btn-seedarr"><i class="fas fa-download"></i> Download</a>
-      <a href="https://github.com/dmzoneill/Seedarr" target="_blank" rel="noopener" class="btn btn-seedarr-outline"><i class="fab fa-github"></i> View on GitHub</a>
+      <a href="https://github.com/dmzoneill/Seedarr" target="_blank" rel="noopener" class="btn btn-seedarr-outline"><i
+        class="fab fa-github"></i> View on GitHub</a>
     </div>
 
   </div>
 </section>
 
-<!-- ═══════════════════════════════ STATS ═══════════════════════════════ -->
+<!-- stats -->
 <section id="stats">
   <div class="container">
     <div class="stats-grid">
@@ -64,7 +70,7 @@ get_header();
   </div>
 </section>
 
-<!-- ═══════════════════════════════ SCREENSHOTS ═══════════════════════════════ -->
+<!-- screenshots -->
 <section id="screenshots">
   <div class="container">
     <div class="section-header">
@@ -90,31 +96,40 @@ get_header();
       <!-- Slides -->
       <div class="carousel-inner">
         <div class="item active">
-          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/slides/screen-1.png" alt="Seedarr Dashboard" data-full="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/screen-1.png" class="carousel-img">
+          <img src="<?php echo seedarr_asset_uri('/assets/img/slides/screen-1.png'); ?>" alt="Seedarr Dashboard"
+            data-full="<?php echo seedarr_asset_uri('/assets/img/screen-1.png'); ?>" class="carousel-img">
         </div>
         <div class="item">
-          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/slides/screen-2.png" alt="Seedarr Torrents" data-full="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/screen-2.png" class="carousel-img">
+          <img src="<?php echo seedarr_asset_uri('/assets/img/slides/screen-2.png'); ?>" alt="Seedarr Torrents"
+            data-full="<?php echo seedarr_asset_uri('/assets/img/screen-2.png'); ?>" class="carousel-img">
         </div>
         <div class="item">
-          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/slides/screen-3.png" alt="Seedarr Activity" data-full="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/screen-3.png" class="carousel-img">
+          <img src="<?php echo seedarr_asset_uri('/assets/img/slides/screen-3.png'); ?>" alt="Seedarr Activity"
+            data-full="<?php echo seedarr_asset_uri('/assets/img/screen-3.png'); ?>" class="carousel-img">
         </div>
         <div class="item">
-          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/slides/screen-4.png" alt="Seedarr Tracker" data-full="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/screen-4.png" class="carousel-img">
+          <img src="<?php echo seedarr_asset_uri('/assets/img/slides/screen-4.png'); ?>" alt="Seedarr Tracker"
+            data-full="<?php echo seedarr_asset_uri('/assets/img/screen-4.png'); ?>" class="carousel-img">
         </div>
         <div class="item">
-          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/slides/screen-5.png" alt="Seedarr Peer Map" data-full="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/screen-5.png" class="carousel-img">
+          <img src="<?php echo seedarr_asset_uri('/assets/img/slides/screen-5.png'); ?>" alt="Seedarr Peer Map"
+            data-full="<?php echo seedarr_asset_uri('/assets/img/screen-5.png'); ?>" class="carousel-img">
         </div>
         <div class="item">
-          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/slides/screen-6.png" alt="Seedarr Schedule" data-full="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/screen-6.png" class="carousel-img">
+          <img src="<?php echo seedarr_asset_uri('/assets/img/slides/screen-6.png'); ?>" alt="Seedarr Schedule"
+            data-full="<?php echo seedarr_asset_uri('/assets/img/screen-6.png'); ?>" class="carousel-img">
         </div>
         <div class="item">
-          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/slides/screen-7.png" alt="Seedarr Statistics" data-full="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/screen-7.png" class="carousel-img">
+          <img src="<?php echo seedarr_asset_uri('/assets/img/slides/screen-7.png'); ?>" alt="Seedarr Statistics"
+            data-full="<?php echo seedarr_asset_uri('/assets/img/screen-7.png'); ?>" class="carousel-img">
         </div>
         <div class="item">
-          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/slides/screen-8.png" alt="Seedarr Settings" data-full="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/screen-8.png" class="carousel-img">
+          <img src="<?php echo seedarr_asset_uri('/assets/img/slides/screen-8.png'); ?>" alt="Seedarr Settings"
+            data-full="<?php echo seedarr_asset_uri('/assets/img/screen-8.png'); ?>" class="carousel-img">
         </div>
         <div class="item">
-          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/slides/screen-9.png" alt="Seedarr System" data-full="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/screen-9.png" class="carousel-img">
+          <img src="<?php echo seedarr_asset_uri('/assets/img/slides/screen-9.png'); ?>" alt="Seedarr System"
+            data-full="<?php echo seedarr_asset_uri('/assets/img/screen-9.png'); ?>" class="carousel-img">
         </div>
       </div>
 
@@ -131,20 +146,17 @@ get_header();
   </div>
 </section>
 
-<!-- Lightbox -->
-<div id="lightboxOverlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.92);z-index:99999;cursor:zoom-out;text-align:center;">
-  <button id="lightboxClose" style="position:fixed;top:16px;right:20px;background:#2a2620;border:1px solid #3a352e;color:#b0a48e;font-size:22px;width:34px;height:34px;border-radius:4px;cursor:pointer;line-height:1;">&times;</button>
-  <img id="lightboxImg" src="" alt="" style="max-width:92%;max-height:90vh;margin-top:4vh;border-radius:4px;cursor:default;box-shadow:0 8px 48px rgba(0,0,0,0.7);">
-</div>
+<?php get_template_part('template-parts/lightbox'); ?>
 
-<!-- ═══════════════════════════════ FEATURES ═══════════════════════════════ -->
+<!-- features -->
 <section id="features">
   <div class="container">
 
     <div class="section-header">
       <h2>Features</h2>
       <div class="divider"></div>
-      <p>Everything you need to keep your torrents seeding — beautifully, automatically, and without moving a single byte of real data.</p>
+      <p>Everything you need to keep your torrents seeding — beautifully, automatically, and without moving a single
+        byte of real data.</p>
     </div>
 
     <!-- Feature 1: Dashboard -->
@@ -184,7 +196,8 @@ get_header();
       </div>
       <div class="feature-info">
         <h3><i class="fas fa-tachometer-alt"></i> Real-time Dashboard</h3>
-        <p>Monitor all your seeding torrents at a glance. Speed graphs, peer counts, tracker status, and ratio progress update live via SignalR — no page refresh needed.</p>
+        <p>Monitor all your seeding torrents at a glance. Speed graphs, peer counts, tracker status, and ratio progress
+          update live via SignalR — no page refresh needed.</p>
         <ul class="feature-list">
           <li><i class="fas fa-chevron-right"></i> Table and grid torrent views</li>
           <li><i class="fas fa-chevron-right"></i> Per-torrent upload speed graphs</li>
@@ -200,7 +213,9 @@ get_header();
     <div class="feature-row reverse">
       <div class="feature-visual">
         <div style="width:100%">
-          <div style="font-size:10px;color:var(--text-dim);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">Protocol Stack</div>
+          <div
+            style="font-size:10px;color:var(--text-dim);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;
+              ">Protocol Stack</div>
           <div class="mock-protocols">
             <div class="mock-proto">
               <div class="mock-proto-name">HTTP Tracker</div>
@@ -239,7 +254,8 @@ get_header();
       </div>
       <div class="feature-info">
         <h3><i class="fas fa-network-wired"></i> Full Protocol Support</h3>
-        <p>Seedarr speaks the full BitTorrent dialect. Peer connections, tracker announces, encryption, DHT — every extension needed to look and behave exactly like a real client.</p>
+        <p>Seedarr speaks the full BitTorrent dialect. Peer connections, tracker announces, encryption, DHT — every
+          extension needed to look and behave exactly like a real client.</p>
         <ul class="feature-list">
           <li><i class="fas fa-chevron-right"></i> HTTP &amp; UDP tracker announce/scrape (BEP 3, BEP 15)</li>
           <li><i class="fas fa-chevron-right"></i> Multi-tracker failover with tier support (BEP 12)</li>
@@ -255,10 +271,14 @@ get_header();
     <div class="feature-row">
       <div class="feature-visual">
         <div style="width:100%">
-          <div style="font-size:10px;color:var(--text-dim);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">Active Client Profile</div>
+          <div
+            style="font-size:10px;color:var(--text-dim);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;
+              ">Active Client Profile</div>
           <div style="background:var(--bg-dark);border:1px solid var(--border);border-radius:5px;padding:18px;">
             <div style="display:flex;gap:12px;margin-bottom:14px;">
-              <div style="flex:1;text-align:center;padding:12px 8px;border:1px solid var(--accent-border);border-radius:4px;background:var(--accent-subtle);">
+              <div
+                style="flex:1;text-align:center;padding:12px 8px;border:1px solid var(--accent-border);
+                  border-radius:4px;background:var(--accent-subtle);">
                 <div style="font-size:11px;color:var(--accent);font-weight:700;">qBittorrent</div>
                 <div style="font-size:10px;color:var(--text-dim);margin-top:3px;">-qB4420-</div>
               </div>
@@ -271,19 +291,30 @@ get_header();
                 <div style="font-size:10px;color:var(--text-dim);margin-top:3px;">-TR3000-</div>
               </div>
             </div>
-            <div style="font-size:10px;color:var(--text-dim);margin-bottom:7px;text-transform:uppercase;letter-spacing:1px;">Speed Distribution</div>
+            <div
+              style="font-size:10px;color:var(--text-dim);margin-bottom:7px;text-transform:uppercase;letter-spacing:1px;
+                ">Speed Distribution</div>
             <div style="display:flex;gap:7px;flex-wrap:wrap;">
-              <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--accent-bg);color:var(--accent);">Pareto 80/20</span>
-              <span style="font-size:11px;padding:3px 10px;border-radius:10px;border:1px solid var(--border);color:var(--text-muted);">Power Law</span>
-              <span style="font-size:11px;padding:3px 10px;border-radius:10px;border:1px solid var(--border);color:var(--text-muted);">Log-Normal</span>
-              <span style="font-size:11px;padding:3px 10px;border-radius:10px;border:1px solid var(--border);color:var(--text-muted);">Equal</span>
+              <span
+                style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--accent-bg);
+                  color:var(--accent);">Pareto 80/20</span>
+              <span
+                style="font-size:11px;padding:3px 10px;border-radius:10px;border:1px solid var(--border);
+                  color:var(--text-muted);">Power Law</span>
+              <span
+                style="font-size:11px;padding:3px 10px;border-radius:10px;border:1px solid var(--border);
+                  color:var(--text-muted);">Log-Normal</span>
+              <span
+                style="font-size:11px;padding:3px 10px;border-radius:10px;border:1px solid var(--border);
+                  color:var(--text-muted);">Equal</span>
             </div>
           </div>
         </div>
       </div>
       <div class="feature-info">
         <h3><i class="fas fa-user-secret"></i> Client Profiles</h3>
-        <p>Seedarr impersonates real BitTorrent clients, generating authentic peer IDs, user agents, and handshake behavior. Trackers see exactly what they expect to see.</p>
+        <p>Seedarr impersonates real BitTorrent clients, generating authentic peer IDs, user agents, and handshake
+          behavior. Trackers see exactly what they expect to see.</p>
         <ul class="feature-list">
           <li><i class="fas fa-chevron-right"></i> qBittorrent, Deluge, Transmission profiles</li>
           <li><i class="fas fa-chevron-right"></i> Authentic peer ID generation per client</li>
@@ -300,7 +331,8 @@ get_header();
       <div class="feature-card">
         <i class="fas fa-calendar-alt"></i>
         <h4>Speed Scheduling</h4>
-        <p>Define upload speed profiles by time of day and day of week. Max bandwidth at night, throttle during work hours.</p>
+        <p>Define upload speed profiles by time of day and day of week. Max bandwidth at night, throttle during work
+          hours.</p>
       </div>
       <div class="feature-card">
         <i class="fas fa-bell"></i>
@@ -315,7 +347,8 @@ get_header();
       <div class="feature-card">
         <i class="fas fa-code"></i>
         <h4>REST API</h4>
-        <p>Full API at <code>/api/v1/</code> with interactive Swagger docs at <code>/swagger</code>. Automate everything.</p>
+        <p>Full API at <code>/api/v1/</code> with interactive Swagger docs at <code>/swagger</code>. Automate
+          everything.</p>
       </div>
       <div class="feature-card">
         <i class="fas fa-tag"></i>
@@ -332,13 +365,14 @@ get_header();
   </div>
 </section>
 
-<!-- ═══════════════════════════════ INTEGRATION ═══════════════════════════════ -->
+<!-- integration -->
 <section id="integration">
   <div class="container">
     <div class="section-header">
       <h2>*arr <span>Integration</span></h2>
       <div class="divider"></div>
-      <p>Connect to your existing Sonarr and Radarr instances. Seedarr syncs your download history and automatically begins simulating seeds.</p>
+      <p>Connect to your existing Sonarr and Radarr instances. Seedarr syncs your download history and automatically
+        begins simulating seeds.</p>
     </div>
     <div class="integration-cards">
       <div class="int-card">
@@ -362,8 +396,11 @@ get_header();
         <p>Auto-seed book downloads</p>
       </div>
     </div>
-    <div style="margin-top:36px;background:var(--bg-primary);border:1px solid var(--border);border-radius:6px;padding:26px;">
-      <h4 style="color:var(--text-primary);font-weight:300;margin-bottom:10px;"><i class="fas fa-plug" style="color:var(--accent);margin-right:8px;"></i>Setup in 3 steps</h4>
+    <div
+      style="margin-top:36px;background:var(--bg-primary);border:1px solid var(--border);border-radius:6px;padding:26px;
+        ">
+      <h4 style="color:var(--text-primary);font-weight:300;margin-bottom:10px;"><i class="fas fa-plug"
+        style="color:var(--accent);margin-right:8px;"></i>Setup in 3 steps</h4>
       <ol style="color:var(--text-muted);margin:0;padding-left:20px;line-height:2.2;">
         <li>Go to <strong style="color:var(--text-secondary)">Settings &gt; Arr Connections</strong> in Seedarr</li>
         <li>Add your Sonarr/Radarr URL and API key</li>
@@ -373,7 +410,7 @@ get_header();
   </div>
 </section>
 
-<!-- ═══════════════════════════════ DOWNLOAD ═══════════════════════════════ -->
+<!-- download -->
 <section id="download">
   <div class="container">
     <div class="section-header">
@@ -394,20 +431,27 @@ get_header();
     <div class="tab-content">
 
       <div class="tab-pane active" id="tab-docker">
-        <h4>Docker (Recommended)</h4>
-        <p>The easiest way to run Seedarr. The official image is published to Docker Hub and GHCR.</p>
-        <pre><code class="language-bash">docker run -d \
-  --name seedarr \
-  -p 9898:9898 \
-  -v seedarr-config:/config \
-  -v seedarr-data:/data \
-  --restart unless-stopped \
-  feeditout/seedarr:latest</code></pre>
+        <h4>Container Run (Podman / Docker)</h4>
+        <p>The easiest way to run Seedarr. The official image is published to Docker Hub and GitHub Container Registry
+          (GHCR).</p>
+        <?php
+        seedarr_render_docker_run(
+            'Option 1: Docker Hub',
+            'feeditout/seedarr:latest'
+        );
+        seedarr_render_docker_run(
+            'Option 2: GitHub Container Registry (GHCR)',
+            'ghcr.io/dmzoneill/seedarr:latest'
+        );
+        ?>
         <p>Then open <strong style="color:var(--text-primary)">http://localhost:9898</strong></p>
         <h4>Docker Compose / Podman Compose</h4>
         <pre><code class="language-yaml">services:
   seedarr:
+    # Option 1 (Docker Hub):
     image: feeditout/seedarr:latest
+    # Option 2 (GHCR):
+    # image: ghcr.io/dmzoneill/seedarr:latest
     container_name: seedarr
     ports:
       - "9898:9898"
@@ -430,19 +474,23 @@ volumes:
         <pre><code class="language-bash">docker compose up -d
 # or
 podman-compose up -d</code></pre>
-        <p>GHCR alternative: <code>ghcr.io/dmzoneill/seedarr:latest</code></p>
         <div class="download-note">
-          <strong style="color:var(--text-secondary)">Volumes:</strong> <code>/config</code> stores the database, settings, and logs. <code>/data</code> holds torrent files and the watch folder.
+          <strong style="color:var(--text-secondary)">Volumes:</strong> <code>/config</code> stores the database,
+            settings, and logs. <code>/data</code> holds torrent files and the watch folder.
         </div>
       </div>
 
       <div class="tab-pane" id="tab-linux">
         <h4>Linux</h4>
-        <p>Seedarr requires .NET 10 runtime. Use the generic tar.gz for manual installation on any Linux distribution.</p>
+        <p>Seedarr requires .NET 10 runtime. Use the generic tar.gz for manual installation on any Linux
+          distribution.</p>
         <div style="margin-bottom:18px;">
-          <a href="https://github.com/dmzoneill/Seedarr/releases/latest" class="download-btn" target="_blank" rel="noopener"><i class="fas fa-download"></i> Linux x64</a>
-          <a href="https://github.com/dmzoneill/Seedarr/releases/latest" class="download-btn" target="_blank" rel="noopener"><i class="fas fa-download"></i> Linux arm64</a>
-          <a href="https://github.com/dmzoneill/Seedarr/releases/latest" class="download-btn" target="_blank" rel="noopener"><i class="fas fa-download"></i> Linux arm</a>
+          <a href="https://github.com/dmzoneill/Seedarr/releases/latest" class="download-btn" target="_blank"
+            rel="noopener"><i class="fas fa-download"></i> Linux x64</a>
+          <a href="https://github.com/dmzoneill/Seedarr/releases/latest" class="download-btn" target="_blank"
+            rel="noopener"><i class="fas fa-download"></i> Linux arm64</a>
+          <a href="https://github.com/dmzoneill/Seedarr/releases/latest" class="download-btn" target="_blank"
+            rel="noopener"><i class="fas fa-download"></i> Linux arm</a>
         </div>
         <ol>
           <li>Download the appropriate archive for your architecture.</li>
@@ -450,37 +498,45 @@ podman-compose up -d</code></pre>
           <li>Run <code>./Seedarr</code> or create a systemd unit file for autostart.</li>
           <li>Browse to <strong style="color:var(--text-primary)">http://localhost:9898</strong></li>
         </ol>
-        <div class="download-note">For production use on Linux, Docker is strongly recommended for isolation and easy updates.</div>
+        <div class="download-note">For production use on Linux, Docker is strongly recommended for isolation and easy
+          updates.</div>
       </div>
 
       <div class="tab-pane" id="tab-macos">
         <h4>macOS</h4>
         <p>Seedarr supports macOS on both Intel and Apple Silicon (arm64).</p>
         <div style="margin-bottom:18px;">
-          <a href="https://github.com/dmzoneill/Seedarr/releases/latest" class="download-btn" target="_blank" rel="noopener"><i class="fas fa-download"></i> Intel (x64)</a>
-          <a href="https://github.com/dmzoneill/Seedarr/releases/latest" class="download-btn" target="_blank" rel="noopener"><i class="fas fa-download"></i> Apple Silicon (arm64)</a>
+          <a href="https://github.com/dmzoneill/Seedarr/releases/latest" class="download-btn" target="_blank"
+            rel="noopener"><i class="fas fa-download"></i> Intel (x64)</a>
+          <a href="https://github.com/dmzoneill/Seedarr/releases/latest" class="download-btn" target="_blank"
+            rel="noopener"><i class="fas fa-download"></i> Apple Silicon (arm64)</a>
         </div>
         <ol>
           <li>Download the macOS archive for your CPU.</li>
           <li>Extract and move <code>Seedarr.app</code> to your Applications folder.</li>
           <li>Self-sign if needed: <code>codesign --force --deep -s - /Applications/Seedarr.app</code></li>
-          <li>Open Seedarr.app and browse to <strong style="color:var(--text-primary)">http://localhost:9898</strong></li>
+          <li>Open Seedarr.app and browse to <strong
+            style="color:var(--text-primary)">http://localhost:9898</strong></li>
         </ol>
       </div>
 
       <div class="tab-pane" id="tab-windows">
         <h4>Windows</h4>
-        <p>Seedarr can run as a Windows Service or System Tray Application. Supports Windows 10 / Server 2019 or later.</p>
+        <p>Seedarr can run as a Windows Service or System Tray Application. Supports Windows 10 / Server 2019 or
+          later.</p>
         <div style="margin-bottom:18px;">
-          <a href="https://github.com/dmzoneill/Seedarr/releases/latest" class="download-btn" target="_blank" rel="noopener"><i class="fas fa-download"></i> Windows x64 Installer</a>
-          <a href="https://github.com/dmzoneill/Seedarr/releases/latest" class="download-btn" target="_blank" rel="noopener"><i class="fas fa-download"></i> Windows x86 Installer</a>
+          <a href="https://github.com/dmzoneill/Seedarr/releases/latest" class="download-btn" target="_blank"
+            rel="noopener"><i class="fas fa-download"></i> Windows x64 Installer</a>
+          <a href="https://github.com/dmzoneill/Seedarr/releases/latest" class="download-btn" target="_blank"
+            rel="noopener"><i class="fas fa-download"></i> Windows x86 Installer</a>
         </div>
         <ol>
           <li>Download and execute the installer.</li>
           <li>Choose between Windows Service (always running) or System Tray Application (runs when logged in).</li>
           <li>Browse to <strong style="color:var(--text-primary)">http://localhost:9898</strong></li>
         </ol>
-        <div class="download-note">Windows Service accounts do not have access to network drives by default. If your config is on a mapped drive, use the System Tray installation instead.</div>
+        <div class="download-note">Windows Service accounts do not have access to network drives by default. If your
+          config is on a mapped drive, use the System Tray installation instead.</div>
       </div>
 
       <div class="tab-pane" id="tab-nas">
@@ -489,7 +545,8 @@ podman-compose up -d</code></pre>
         <h4>Synology</h4>
         <ol>
           <li>Install Container Manager from the Package Center.</li>
-          <li>Pull <code>feeditout/seedarr:latest</code> from Docker Hub.</li>
+          <li>Pull <code>feeditout/seedarr:latest</code> from Docker Hub, or
+            <code>ghcr.io/dmzoneill/seedarr:latest</code> from GHCR.</li>
           <li>Configure port <code>9898</code> and map volumes for <code>/config</code> and <code>/data</code>.</li>
           <li>Browse to <strong style="color:var(--text-primary)">http://&lt;NAS-IP&gt;:9898</strong></li>
         </ol>
@@ -525,7 +582,8 @@ make build          # Build release
 make test           # Run unit tests
 make publish        # Publish release artifacts
 make frontend       # Build production frontend bundle</code></pre>
-        <div class="download-note">The frontend dev server proxies API calls to the backend on port <code>9898</code>. Both must be running simultaneously during development.</div>
+        <div class="download-note">The frontend dev server proxies API calls to the backend on port <code>9898</code>.
+          Both must be running simultaneously during development.</div>
       </div>
 
     </div>

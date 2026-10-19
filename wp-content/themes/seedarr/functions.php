@@ -47,3 +47,37 @@ function seedarr_scripts() {
     wp_enqueue_script('seedarr-app', get_template_directory_uri() . '/assets/js/app.js', array('jquery', 'seedarr-bootstrap-js'), $theme_version, true);
 }
 add_action('wp_enqueue_scripts', 'seedarr_scripts');
+
+/**
+ * Synchronize the social preview image from theme assets into WordPress uploads.
+ */
+function seedarr_sync_og_image() {
+    $src = get_template_directory() . '/assets/img/og-image.png';
+    if (!file_exists($src)) {
+        return;
+    }
+
+    $upload_dir = wp_upload_dir();
+    $target_dir = $upload_dir['basedir'] . '/2026/09';
+    $target_file = $target_dir . '/og-image.png';
+
+    if (!file_exists($target_dir)) {
+        wp_mkdir_p($target_dir);
+    }
+
+    if (!file_exists($target_file) || md5_file($src) !== @md5_file($target_file)) {
+        @copy($src, $target_file);
+    }
+}
+add_action('init', 'seedarr_sync_og_image');
+
+/**
+ * Filter Yoast SEO Open Graph and Twitter image URLs to use theme assets directly.
+ */
+add_filter('wpseo_opengraph_image', function ($image_url) {
+    return get_template_directory_uri() . '/assets/img/og-image.png';
+});
+
+add_filter('wpseo_twitter_image', function ($image_url) {
+    return get_template_directory_uri() . '/assets/img/og-image.png';
+});
