@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Main Template File (Fallback)
  *
@@ -15,18 +16,20 @@ get_header();
     </div>
 
     <?php if (have_posts()) : ?>
-      <?php while (have_posts()) : the_post(); ?>
+        <?php
+        while (have_posts()) :
+            the_post();
+            ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class('post-card'); ?>>
           <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-          <div class="post-meta">
-            <span><i class="fas fa-calendar-alt"></i> <?php echo get_the_date(); ?></span> &bull;
-            <span><i class="fas fa-user"></i> <?php the_author(); ?></span>
-          </div>
+            <?php get_template_part('template-parts/post-meta'); ?>
           <div class="entry-content">
             <?php the_excerpt(); ?>
           </div>
         </article>
-      <?php endwhile; ?>
+            <?php
+        endwhile;
+        ?>
 
       <div class="pagination">
         <?php echo paginate_links(); ?>
