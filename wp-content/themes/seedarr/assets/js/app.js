@@ -1,6 +1,6 @@
 /* global hljs, $ */
 
-try { hljs.highlightAll() } catch (e) { void e }
+try { hljs.highlightAll() } catch (e) {}
 
 // Smooth-scroll (exclude Bootstrap tab links and carousel controls)
 document.querySelectorAll('a[href^="#"]:not([data-toggle="tab"]):not([data-slide])').forEach(function (a) {
