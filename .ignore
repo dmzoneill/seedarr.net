@@ -1,0 +1,30 @@
+# Paths jscpd should skip. Super-linter downloads its own
+# .github/linters/.jscpd.json and overwrites a repo copy, so vendored
+# and generated trees are listed here. jscpd 5 reads this file while
+# walking the workspace. First-party source is not listed.
+
+# WordPress core and the themes/plugins shipped with it.
+/index.php
+/wp-*.php
+/xmlrpc.php
+/wp-admin/
+/wp-includes/
+/wp-content/index.php
+/wp-content/plugins/index.php
+/wp-content/plugins/akismet/
+/wp-content/themes/index.php
+/wp-content/themes/twentytwentythree/
+/wp-content/themes/twentytwentyfour/
+/wp-content/themes/twentytwentyfive/
+
+# Third-party front-end libraries, including the copies enqueued by the theme.
+/vendor/
+/wp-content/themes/seedarr/assets/css/bootstrap.min.css
+/wp-content/themes/seedarr/assets/css/fontawesome.min.css
+/wp-content/themes/seedarr/assets/css/highlight-github-dark.min.css
+/wp-content/themes/seedarr/assets/js/bootstrap.min.js
+/wp-content/themes/seedarr/assets/js/highlight.min.js
+/wp-content/themes/seedarr/assets/js/jquery.min.js
+
+# SVG image assets. jscpd treats the mirrored artwork as markup clones.
+**/*.svg
