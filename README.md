@@ -11,7 +11,7 @@ theme links to
 [github.com/dmzoneill/Seedarr](https://github.com/dmzoneill/Seedarr).
 
 `CNAME` contains `seedarr.net`. The site version recorded in `version` is
-`1.0.38`. WordPress core in this tree is 7.1.1 (`wp-includes/version.php`).
+`1.0.39`. WordPress core in this tree is 7.1.1 (`wp-includes/version.php`).
 
 ## Layout
 
