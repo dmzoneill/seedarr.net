@@ -1,5 +1,9 @@
 # seedarr.net
 
+<p align="center">
+  <img src=".github/logo.png" alt="seedarr.net logo" width="128" />
+</p>
+
 WordPress site for seedarr.net. Seedarr is a BitTorrent seeding simulator. The
 custom theme describes itself as a BitTorrent seeding simulator theme based on
 the official Seedarr design. The application is not in this repository; the
