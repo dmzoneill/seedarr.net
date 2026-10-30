@@ -1,8 +1,8 @@
 /* global hljs */
 
-try {
+if (typeof hljs !== "undefined") {
   hljs.highlightAll();
-} catch (e) {}
+}
 
 // Smooth-scroll (exclude Bootstrap tab links and carousel controls)
 document
