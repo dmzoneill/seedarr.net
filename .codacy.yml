@@ -1,0 +1,10 @@
+---
+exclude_paths:
+  - 'wp-admin/**'
+  - 'wp-includes/**'
+  - 'wp-*.php'
+  - 'index.php'
+  - 'xmlrpc.php'
+  - 'wp-content/plugins/akismet/**'
+  - 'wp-content/themes/twentytwenty*/**'
+  - 'vendor/**'
