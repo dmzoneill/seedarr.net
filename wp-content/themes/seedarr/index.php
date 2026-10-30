@@ -15,9 +15,9 @@ get_header();
       <h1 class="page-title"><?php single_post_title(); ?></h1>
     </div>
 
-    <?php if (have_posts()) : ?>
+    <?php if (have_posts() === true) : ?>
         <?php
-        while (have_posts()) :
+        while (have_posts() === true) :
             the_post();
             ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class('post-card'); ?>>
