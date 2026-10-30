@@ -5,7 +5,7 @@
  * @package Seedarr
  */
 
-if (!defined('ABSPATH')) {
+if (defined('ABSPATH') === false) {
     exit;
 }
 
@@ -53,7 +53,7 @@ add_action('wp_enqueue_scripts', 'seedarr_scripts');
  */
 function seedarr_sync_og_image() {
     $src = get_template_directory() . '/assets/img/og-image.png';
-    if (!file_exists($src)) {
+    if (file_exists($src) === false) {
         return;
     }
 
@@ -61,11 +61,11 @@ function seedarr_sync_og_image() {
     $target_dir = $upload_dir['basedir'] . '/2026/09';
     $target_file = $target_dir . '/og-image.png';
 
-    if (!file_exists($target_dir)) {
+    if (file_exists($target_dir) === false) {
         wp_mkdir_p($target_dir);
     }
 
-    if (!file_exists($target_file) || md5_file($src) !== @md5_file($target_file)) {
+    if (file_exists($target_file) === false || md5_file($src) !== @md5_file($target_file)) {
         @copy($src, $target_file);
     }
 }
